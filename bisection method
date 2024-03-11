@@ -1,0 +1,18 @@
+from math import sqrt , cos
+def func (x):
+    return (x**2)-3
+def Bisection (a,b):
+    if(func(a) * func(b) > 0):
+        print("Wrong interval")
+        return
+    p = (a+b)/2
+    while (abs(func(p))>=0.0001):
+        p = (a+b)/2
+        print(f'{a : 0.4f}   {b : 0.4f}   {p : 0.4f}   {func(p) : 0.6f}')
+
+        if(func(p) * func(a) < 0):
+            b=p
+        else:
+                a=p
+    print('the value of root is %0.6f'%p)
+Bisection(1,2)    
